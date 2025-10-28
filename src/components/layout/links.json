@@ -1,0 +1,35 @@
+[
+  {
+    "label": "Chapter 25-2",
+    "children": [
+      {
+        "label": "Officers",
+        "href": "/chapter/officers"
+      },
+      {
+        "label": "Auxillary",
+        "href": "/chapter/auxillary"
+      },
+      {
+        "label": "Gallery",
+        "href": "/gallery"
+      },
+      {
+        "label": "GBNF",
+        "href": "/chapter/gbnf"
+      },
+      {
+        "label": "Events",
+        "href": "/chapter/events"
+      }
+    ]
+  },
+  {
+    "label": "ShamrockFest",
+    "href": "/shamrockfest"
+  },
+  {
+    "label": "CVMA",
+    "href": "https://combatvet.us"
+  }
+]
