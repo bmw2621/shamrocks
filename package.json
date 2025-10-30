@@ -14,8 +14,11 @@
     "@fullcalendar/daygrid": "^6.1.19",
     "@fullcalendar/list": "^6.1.19",
     "@fullcalendar/react": "^6.1.19",
+    "@react-three/drei": "^10.7.6",
+    "@react-three/fiber": "^9.4.0",
     "@sanity/image-url": "^1.2.0",
     "@sanity/vision": "^4.11.0",
+    "@types/three": "^0.180.0",
     "ical.js": "^2.2.1",
     "next": "16.0.0",
     "next-sanity": "^11.6.2",
@@ -23,7 +26,8 @@
     "react-dom": "19.2.0",
     "react-icons": "^5.5.0",
     "sanity": "^4.11.0",
-    "styled-components": "^6.1.19"
+    "styled-components": "^6.1.19",
+    "three": "^0.180.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
@@ -33,6 +37,7 @@
     "daisyui": "^5.3.10",
     "eslint": "^9",
     "eslint-config-next": "16.0.0",
+    "raw-loader": "^4.0.2",
     "tailwindcss": "^4",
     "typescript": "^5"
   },

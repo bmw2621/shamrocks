@@ -1,10 +1,26 @@
 import Shamrock from "@/components/Shamrock";
+import Skully from "@/lib/3d/scenes/Skully";
 import Image from "next/image";
 
 export default function Home() {
   return (
     <>
-      <div className="w-screen h-96 bg-cover bg-[linear-gradient(to_right,rgba(0,0,0,1),rgba(0,0,0,1)_40%,rgba(0,0,0,0)),url(/landing.png)] bg-center shadow-2xl shadow-accent/50 z-10"></div>
+      <div
+        className="w-screen
+        h-96
+        bg-cover
+        bg-[linear-gradient(to_right,rgba(0,0,0,1),rgba(0,0,0,1)_40%,rgba(0,0,0,0)),url(/landing.png)]
+        bg-center
+        shadow-2xl
+        shadow-accent/50 z-10
+        "
+      >
+        <div className="h-full max-w-4xl mx-auto">
+          <div className="aspect-square h-full">
+            <Skully />
+          </div>
+        </div>
+      </div>
       <main className="flex-col w-full max-w-4xl mx-auto mt-5">
         <div className="bg-neutral-50 w-full text-black py-5 px-10 flex flex-col items-center">
           <div className="w-full max-w-sm flex justify-between items-center mb-5">
