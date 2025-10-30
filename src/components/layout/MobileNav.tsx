@@ -6,6 +6,7 @@ import {
 import Link from "next/link";
 import { FC } from "react";
 import { FaBars, FaChevronDown } from "react-icons/fa";
+import Details from "./Details";
 
 /**
  * Types
@@ -21,7 +22,7 @@ type Props = {
  */
 const MobileNav: FC<Props> = ({ links }) => {
   return (
-    <details className="block md:hidden group/mobile-nav z-50">
+    <Details className="block md:hidden group/mobile-nav z-50">
       <summary className="btn btn-sm hover:btn-primary">
         <FaBars />
       </summary>
@@ -54,7 +55,7 @@ const MobileNav: FC<Props> = ({ links }) => {
           }
           const { label, children: childLinks } = link as ShamrockLinkParent;
           return (
-            <details key={label} className="group/has-children w-full">
+            <Details key={label} className="group/has-children w-full">
               <summary className="btn btn-sm w-full hover:btn-primary">
                 {link.label}
                 <FaChevronDown className="group-open/has-children:rotate-180 transition-all duration-500" />
@@ -68,11 +69,11 @@ const MobileNav: FC<Props> = ({ links }) => {
                   </Link>
                 );
               })}
-            </details>
+            </Details>
           );
         })}
       </div>
-    </details>
+    </Details>
   );
 };
 

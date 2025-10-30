@@ -6,6 +6,7 @@ import {
 import Link from "next/link";
 import { FC } from "react";
 import { FaChevronDown } from "react-icons/fa";
+import Details from "./Details";
 
 /**
  * Types
@@ -35,7 +36,7 @@ const FullNav: FC<Props> = async ({ links }) => {
         }
         const { label, children: childLinks } = link as ShamrockLinkParent;
         return (
-          <details key={label}>
+          <Details key={label}>
             <summary className="btn btn-sm hover:btn-primary">
               {link.label}
               <FaChevronDown />
@@ -49,7 +50,7 @@ const FullNav: FC<Props> = async ({ links }) => {
                 </Link>
               ))}
             </div>
-          </details>
+          </Details>
         );
       })}
     </div>
