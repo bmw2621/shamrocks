@@ -1,4 +1,4 @@
-import Nametape from "@/components/Nametape";
+import Nametape from "@/lib/components/Nametape";
 import { getOfficers } from "@/services/backend";
 import { getPositionLabel, urlFor } from "@/utils/sanity";
 import Image from "next/image";

@@ -1,11 +1,13 @@
 "use client";
 import { ThreeEvent, useFrame } from "@react-three/fiber";
 import { useState } from "react";
+import Registered from "./Registered";
 import SkullyMesh from "./SkullyMesh";
 import SpearheadMesh from "./SpearheadMesh";
 
 const SPEED = 0.003;
 let timeoutId: NodeJS.Timeout;
+const LIGHT_SOURCE_POSITION = [5, 10, 2] as [x: number, y: number, z: number];
 
 const SkullyScene = () => {
   const [autoRotate, setAutoRotate] = useState(true);
@@ -44,9 +46,10 @@ const SkullyScene = () => {
 
   return (
     <group {...groupProps} onPointerMove={handleMouseMove}>
-      <directionalLight intensity={20} position={[5, 10, 2]} />
-      <SkullyMesh />
+      <directionalLight intensity={20} position={LIGHT_SOURCE_POSITION} />
+      <SkullyMesh lightPosition={LIGHT_SOURCE_POSITION} />
       <SpearheadMesh />
+      <Registered />
     </group>
   );
 };

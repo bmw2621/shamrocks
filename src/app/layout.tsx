@@ -1,4 +1,4 @@
-import Nav from "@/components/layout/Nav";
+import Nav from "@/lib/components/layout/Nav";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";

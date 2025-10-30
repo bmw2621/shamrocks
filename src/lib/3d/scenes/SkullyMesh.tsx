@@ -1,10 +1,14 @@
 import { useGLTF } from "@react-three/drei";
-import { useMemo } from "react";
+import { FC, useMemo } from "react";
 import { ShaderMaterial, Vector3 } from "three";
 import { degToRad } from "three/src/math/MathUtils.js";
 import { skullData } from "./shaders";
 
-const SkullyMesh = () => {
+type Props = {
+  lightPosition: [x: number, y: number, z: number];
+};
+
+const SkullyMesh: FC<Props> = ({ lightPosition }) => {
   const { nodes } = useGLTF("/models/skully.glb");
 
   const skullMaterial = useMemo(
@@ -15,12 +19,12 @@ const SkullyMesh = () => {
             value: 1.0,
           },
           u_lightSource: {
-            value: new Vector3(5, 10, 1),
+            value: new Vector3(...lightPosition),
           },
         },
         ...skullData,
       }),
-    []
+    [lightPosition]
   );
 
   return (

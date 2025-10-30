@@ -1,5 +1,5 @@
-import Shamrock from "@/components/Shamrock";
 import Skully from "@/lib/3d/scenes/Skully";
+import Shamrock from "@/lib/components/Shamrock";
 import Image from "next/image";
 
 export default function Home() {

@@ -1,4 +1,4 @@
-import Shamrock from "@/components/Shamrock";
+import Shamrock from "@/lib/components/Shamrock";
 
 const ShamrockFestPage = () => {
   return (
