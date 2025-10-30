@@ -15,7 +15,7 @@ export default function Home() {
         shadow-accent/50 z-10
         "
       >
-        <div className="h-full max-w-4xl mx-auto">
+        <div className="h-full max-w-4xl mx-auto flex justify-center md:justify-start">
           <div className="aspect-square h-full">
             <Skully />
           </div>
