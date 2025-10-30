@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "mv ./src/app/studio/page.tsx ./.bkp && next build && mv ./.bkp ./src/app/studio/page.tsx",
     "start": "next start",
     "typegen": "next typegen",
     "lint": "eslint"
