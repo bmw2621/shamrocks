@@ -20,7 +20,7 @@
     "@sanity/vision": "^4.11.0",
     "@types/three": "^0.180.0",
     "ical.js": "^2.2.1",
-    "next": "16.0.0",
+    "next": "16.0.8",
     "next-sanity": "^11.6.2",
     "react": "19.2.0",
     "react-dom": "19.2.0",
