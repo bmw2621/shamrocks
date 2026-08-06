@@ -8,7 +8,7 @@ const imageBuilder = imageUrlBuilder(sanityClient);
 export const urlFor = (source: SanityImageSource) => imageBuilder.image(source);
 
 const positionMap: Record<ChapterPosition, string> = {
-  chaplain: ":Chaplain",
+  chaplain: "Chaplain",
   commander: "Commander",
   pro: "PRO",
   qm: "Quartermaster",
