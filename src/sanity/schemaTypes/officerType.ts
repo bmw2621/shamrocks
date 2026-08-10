@@ -30,7 +30,6 @@ const officerType = defineType({
       title: "Road Name",
       type: "reference",
       to: [{ type: "member" }],
-      validation: (Rule) => Rule.required(),
     }),
   ],
 });

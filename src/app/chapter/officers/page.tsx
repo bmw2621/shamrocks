@@ -29,15 +29,17 @@ const OfficersPage = async () => {
                 </Nametape>
                 <Image
                   src={
-                    o.roadName.image
+                    o?.roadName?.image
                       ? urlFor(o.roadName.image).width(200).height(300).url()
                       : "/cvma_logo.png"
                   }
                   width={200}
                   height={300}
-                  alt={o.roadName.roadName}
+                  alt={o?.roadName?.roadName || "no image"}
                 />
-                <Nametape className="w-full">{o.roadName.roadName}</Nametape>
+                <Nametape className="w-full">
+                  {o?.roadName?.roadName || "-"}
+                </Nametape>
               </div>
             </div>
           );
