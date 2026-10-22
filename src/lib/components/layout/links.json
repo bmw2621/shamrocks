@@ -7,12 +7,13 @@
         "href": "/chapter/officers"
       },
       {
-        "label": "Auxillary",
-        "href": "/chapter/auxillary"
+        "label": "Auxiliary",
+        "href": "/chapter/auxiliary"
       },
       {
         "label": "Gallery",
-        "href": "/gallery"
+        "href": "https://www.facebook.com/cvma.ga.25.2/photos",
+        "target": "_blank"
       },
       {
         "label": "GBNF",

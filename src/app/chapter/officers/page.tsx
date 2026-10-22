@@ -27,16 +27,19 @@ const OfficersPage = async () => {
                   <div>Chapter</div>
                   <div className="whitespace-nowrap">{`${getPositionLabel(o.position)}`}</div>
                 </Nametape>
+                <div className="flex items-center h-[300px]">
+
                 <Image
-                  src={
-                    o?.roadName?.image
-                      ? urlFor(o.roadName.image).width(200).height(300).url()
-                      : "/cvma_logo.png"
-                  }
-                  width={200}
-                  height={300}
-                  alt={o?.roadName?.roadName || "no image"}
+                src={
+                  o?.roadName?.image
+                  ? urlFor(o.roadName.image).width(200).height(300).url()
+                  : "/cvma_logo.png"
+                }
+                width={200}
+                height={300}
+                alt={o?.roadName?.roadName || "no image"}
                 />
+                </div>
                 <Nametape className="w-full">
                   {o?.roadName?.roadName || "-"}
                 </Nametape>

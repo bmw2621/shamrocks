@@ -1,6 +1,7 @@
 import Skully from "@/lib/3d/scenes/Skully";
 import Shamrock from "@/lib/components/Shamrock";
 import Image from "next/image";
+import { FaFacebookF } from "react-icons/fa";
 
 export default function Home() {
   return (
@@ -21,7 +22,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <main className="flex-col w-full max-w-4xl mx-auto mt-5">
+      <main className="flex flex-col w-full max-w-4xl mx-auto mt-5 gap-8">
         <div className="bg-neutral-50 w-full text-black py-5 px-10 flex flex-col items-center">
           <div className="w-full max-w-sm flex justify-between items-center mb-5">
             <Image src="/cvma_logo.png" width={40} height={40} alt="" />
@@ -37,6 +38,7 @@ export default function Home() {
             simply to say &quot;Thank You.&quot; and &quot;Welcome Home.&quot;
           </p>
         </div>
+   
       </main>
     </>
   );

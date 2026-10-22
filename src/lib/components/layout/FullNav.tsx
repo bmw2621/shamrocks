@@ -21,15 +21,16 @@ type Props = {
  *
  */
 const FullNav: FC<Props> = async ({ links }) => {
+  links.forEach(console.log)
   return (
     <div className="gap-1 hidden md:flex z-50">
       {links.map((link: ShamrockLink) => {
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-expect-error
         if (link.href) {
-          const { href, label } = link as ShamrockLinkChild;
+          const { href, label, target } = link as ShamrockLinkChild;
           return (
-            <Link href={href} key={label}>
+            <Link href={href} key={label} target={target} rel={target && "noopener noreferrer"}>
               <button className="btn btn-sm hover:btn-primary">{label}</button>
             </Link>
           );
@@ -43,7 +44,7 @@ const FullNav: FC<Props> = async ({ links }) => {
             </summary>
             <div className="absolute flex flex-col">
               {childLinks.map((link2) => (
-                <Link href={link2.href} key={link2.label}>
+                <Link href={link2.href} key={link2.label} target={link2.target}  rel={link2.target && "noopener noreferrer"}>
                   <button className="btn btn-sm btn-neutral hover:btn-accent btn-block z-50">
                     {link2.label}
                   </button>
