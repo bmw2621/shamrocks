@@ -37,9 +37,6 @@ const Details: FC<PropsWithChildren<Props>> = ({
   }, [controlledOpen]);
 
   const handleToggle = (event: ToggleEvent<HTMLDetailsElement>) => {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error
-    console.log(event.target.open);
     // Prevent onToggle from firing on initial mount if open is true
     if (el.current) {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment

@@ -7,6 +7,8 @@ import Link from "next/link";
 import { FC } from "react";
 import { FaChevronDown } from "react-icons/fa";
 import Details from "./Details";
+import { signInWithBand } from "@/lib/auth/loginAction";
+import LoginButton from "./LoginButton";
 
 /**
  * Types
@@ -21,7 +23,6 @@ type Props = {
  *
  */
 const FullNav: FC<Props> = async ({ links }) => {
-  links.forEach(console.log)
   return (
     <div className="gap-1 hidden md:flex z-50">
       {links.map((link: ShamrockLink) => {
@@ -30,7 +31,12 @@ const FullNav: FC<Props> = async ({ links }) => {
         if (link.href) {
           const { href, label, target } = link as ShamrockLinkChild;
           return (
-            <Link href={href} key={label} target={target} rel={target && "noopener noreferrer"}>
+            <Link
+              href={href}
+              key={label}
+              target={target}
+              rel={target && "noopener noreferrer"}
+            >
               <button className="btn btn-sm hover:btn-primary">{label}</button>
             </Link>
           );
@@ -44,7 +50,12 @@ const FullNav: FC<Props> = async ({ links }) => {
             </summary>
             <div className="absolute flex flex-col">
               {childLinks.map((link2) => (
-                <Link href={link2.href} key={link2.label} target={link2.target}  rel={link2.target && "noopener noreferrer"}>
+                <Link
+                  href={link2.href}
+                  key={link2.label}
+                  target={link2.target}
+                  rel={link2.target && "noopener noreferrer"}
+                >
                   <button className="btn btn-sm btn-neutral hover:btn-accent btn-block z-50">
                     {link2.label}
                   </button>
@@ -54,6 +65,7 @@ const FullNav: FC<Props> = async ({ links }) => {
           </Details>
         );
       })}
+      <LoginButton />
     </div>
   );
 };

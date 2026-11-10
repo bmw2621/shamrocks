@@ -7,6 +7,7 @@ import Link from "next/link";
 import { FC } from "react";
 import { FaBars, FaChevronDown } from "react-icons/fa";
 import Details from "./Details";
+import { signInWithBand } from "@/lib/auth/loginAction";
 
 /**
  * Types
@@ -72,6 +73,27 @@ const MobileNav: FC<Props> = ({ links }) => {
             </Details>
           );
         })}
+        <form action={signInWithBand}>
+          <button
+            type="submit"
+            className="btn
+          btn-sm
+          btn-primary
+          hover:btn-accent
+          btn-block
+          relative
+          before:content-['']
+          before:absolute
+          before:bottom-full
+          before:left-0
+          before:w-full
+          before:h-[15px]
+          top-[14px]
+          before:bg-black"
+          >
+            <img src="band.svg" className="w-8" /> Login wth Band
+          </button>
+        </form>
       </div>
     </Details>
   );
