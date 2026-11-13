@@ -2,12 +2,11 @@ import {
   ShamrockLink,
   ShamrockLinkChild,
   ShamrockLinkParent,
-} from "@/app/typedefs/link";
+} from "@/lib/typedefs/link";
 import Link from "next/link";
 import { FC } from "react";
 import { FaChevronDown } from "react-icons/fa";
 import Details from "./Details";
-import { signInWithBand } from "@/lib/auth/loginAction";
 import LoginButton from "./LoginButton";
 
 /**
@@ -26,8 +25,7 @@ const FullNav: FC<Props> = async ({ links }) => {
   return (
     <div className="gap-1 hidden md:flex z-50">
       {links.map((link: ShamrockLink) => {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-expect-error
+        // @ts-expect-error because
         if (link.href) {
           const { href, label, target } = link as ShamrockLinkChild;
           return (
@@ -65,7 +63,7 @@ const FullNav: FC<Props> = async ({ links }) => {
           </Details>
         );
       })}
-      <LoginButton />
+      <LoginButton className="w-fit" />
     </div>
   );
 };
