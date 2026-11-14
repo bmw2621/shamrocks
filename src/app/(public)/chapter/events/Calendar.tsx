@@ -1,10 +1,13 @@
 "use client";
-import { IcalShaped } from "@/app/typedefs/bandCal";
+import { IcalShaped } from "@/lib/typedefs/bandCal";
+import { DatesSetArg } from "@fullcalendar/core/index.js";
 import { EventImpl } from "@fullcalendar/core/internal.js";
 import dayGridPlugin from "@fullcalendar/daygrid"; // a plugin!
 import listPlugin from "@fullcalendar/list"; // a plugin!
 import FullCalendar from "@fullcalendar/react";
 import { FC, useMemo, useRef, useState } from "react";
+import { FcPrevious, FcNext } from "react-icons/fc";
+import { MdToday } from "react-icons/md";
 
 type Props = {
   calendar: IcalShaped[];
@@ -13,6 +16,10 @@ type Props = {
 const Calendar: FC<Props> = ({ calendar }) => {
   const modalRef = useRef<HTMLDialogElement>(null);
   const [selectedEvent, setSelectedEvent] = useState<EventImpl>();
+  const [title, setTitle] = useState<string>();
+  const calendarRef = useRef<FullCalendar>(null);
+
+  const calendarApi = () => calendarRef.current?.getApi();
 
   const selectedEventTime = useMemo(() => {
     if (!selectedEvent?.start) return null;
@@ -34,9 +41,39 @@ const Calendar: FC<Props> = ({ calendar }) => {
   return (
     <>
       <div className="hidden sm:block">
+        <div className="flex justify-between items-center mb-3">
+          <h2>{title}</h2>
+          <div className="flex items-center gap-3">
+            <button
+              className="btn btn-sm btn-primary"
+              onClick={() => calendarApi()?.today()}
+            >
+              <MdToday />
+            </button>
+            <div className="[&_polygon]:fill-white!">
+              <button
+                className="btn btn-sm btn-primary"
+                onClick={() => calendarApi()?.prev()}
+              >
+                <FcPrevious />
+              </button>
+              <button
+                className="btn btn-sm btn-primary "
+                onClick={() => calendarApi()?.next()}
+              >
+                <FcNext />
+              </button>
+            </div>
+          </div>
+        </div>
         <FullCalendar
+          ref={calendarRef}
+          headerToolbar={false}
           plugins={[dayGridPlugin]}
           initialView="dayGridMonth"
+          datesSet={(dateInfo: DatesSetArg) => {
+            setTitle(dateInfo.view.title);
+          }}
           events={calendar.map((ev) => ({
             title: ev.summary,
             date: ev.start,
